@@ -1,0 +1,24 @@
+<html ng-app="racingFrogs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Racing Frogs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+
+</head>
+
+<body ng-controller="MainController as vm" class="col-md-4 col-md-offset-4">
+    <h3>Bob has {{vm.bob.cash | currency}}</h3>
+    <h3>Joe has {{vm.joe.cash | currency}}</h3>
+    <h3>The bank has {{vm.bank | currency}}</h3>
+    <button class='btn btn-warning' type="button" ng-click="vm.receiveMoneyFromBob()">Bob <span class="badge">-5</span></button>
+    <button class='btn btn-warning' type="button" ng-click="vm.giveMoneyToBob()">Bob <span class="badge">+10</span></button>
+    <button class='btn btn-warning' type="button" ng-click="vm.receiveMoneyFromJoe()">Joe <span class="badge">-5</span></button>
+    <button class='btn btn-warning' type="button" ng-click="vm.giveMoneyToJoe()">Joe <span class="badge">+10</span></button>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.6/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
