@@ -48,4 +48,18 @@ function MainController() {
     vm.receiveMoneyFromJoe = function () {
         vm.bank += vm.joe.giveCash(5);
     }
+    
+    function Frog(name, posX){
+        this.name = name;
+        this.posX = posX;
+    }
+    vm.frogs = [new Frog('Joe', 144), new Frog('Sam', 144), new Frog('Bill', 144)];
+    vm.startRace = function(){
+    vm.frogs.forEach(function(frog){
+        frog.posX += 12;
+        if(frog.posX >= 876){
+            alert(frog.name + ' has won!')
+        }
+    })
+    }
 }
