@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Racing Frogs</title>
+    <title>Pepe Races!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     <link rel="stylesheet" href="app.css" />
 
@@ -12,16 +12,18 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="panel-title">
-                <h3>Racing Frogs</h3>
+                <h3>Racing Pepes</h3>
+                <h5>{{vm.cashOnHand.amount - vm.subtract | currency}}</h5>
+                <h5>Wager:</h5><input id="wager" ng-model="vm.subtract"></input>
             </div>
         </div>
         <div class="panel-body">
             <div class="lane">
                 <table style="width: 100%">
                     <tr ng-repeat="frog in vm.frogs">
-                        <td style="border: solid black; width: 100px; padding: 4px">{{frog.name}}</td>
+                        <td style="border: solid black; width: 100px; padding: 4px"><span class="btn btn-default wagerButton" ng-click="vm.bet($index)">{{frog.name}}</span></td>
                         <td style="border: 1px dashed black">
-                            <span style="position: absolute; width: 20px; height: 12px; background-color: pink; left: {{frog.posX}}"></span>
+                            <img style="left: {{frog.posX}}" src="Pepe.png" class="frog"></img>
                             <span class="pull-left">Start ||</span>
                             <span class="pull-right">|| Finish</span>
                         </td>
@@ -31,6 +33,10 @@
         </div>
         <div class="panel-footer">
             <button class="btn btn-default" ng-click="vm.startRace()">Start Race</button>
+            <input class="frogAdderInput" placeholder="Enter your frog"></input>
+            <button class="btn btn-default frogAdderButton" ng-click="vm.addFrog()">Add Frog</button>
+            <button class="btn btn-default" ng-click="vm.newRace()">New Race</button>
+            <!--<button class="btn btn-default" ng-click="vm.bet()">Place Bet</button>-->
         </div>
     </div>
 
